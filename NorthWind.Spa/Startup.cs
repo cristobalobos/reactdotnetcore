@@ -22,7 +22,16 @@ namespace NorthWind.Spa
         {
 
             services.AddControllersWithViews();
+            //crear servicio web api
+            services.AddScoped<NorthWind.Dal.ProductsRepository>();
 
+            //crear politica que perita cualquier origen, metodo y header
+            services.AddCors(options =>
+                options.AddPolicy("CORSReactPolicy", builder =>
+                    builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()                    
+                ));
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
@@ -47,6 +56,9 @@ namespace NorthWind.Spa
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
+
+            //uso de la politica creada
+            app.UseCors("CORSReactPolicy");
 
             app.UseRouting();
 
