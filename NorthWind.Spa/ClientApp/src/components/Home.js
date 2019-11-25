@@ -1,26 +1,59 @@
-import React, { Component } from 'react';
+﻿import React, { Component } from 'react'
+import SimpleDataTable from './SimpleDataTable'
+import ShowProductForm from './ShowProductForm'
 
-export class Home extends Component {
-  static displayName = Home.name;
+class Home extends Component {
+    // contendra propiedades
+    state = {
+        products: [
+            { id: 1, name: 'Azucar', unitPrice: 19.50, unitInStock: 50 },
+            { id: 2, name: 'Leche', unitPrice: 8, unitInStock: 150 },
+            { id: 3, name: 'Frijol', unitPrice: 8, unitInStock: 300 },
+        ]
+    }
 
-  render () {
-    return (
-      <div>
-        <h1>Hello, world!</h1>
-        <p>Welcome to your new single-page application, built with:</p>
-        <ul>
-          <li><a href='https://get.asp.net/'>ASP.NET Core</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code</li>
-          <li><a href='https://facebook.github.io/react/'>React</a> for client-side code</li>
-          <li><a href='http://getbootstrap.com/'>Bootstrap</a> for layout and styling</li>
-        </ul>
-        <p>To help you get started, we have also set up:</p>
-        <ul>
-          <li><strong>Client-side navigation</strong>. For example, click <em>Counter</em> then <em>Back</em> to return here.</li>
-          <li><strong>Development server integration</strong>. In development mode, the development server from <code>create-react-app</code> runs in the background automatically, so your client-side resources are dynamically built on demand and the page refreshes when you modify any file.</li>
-          <li><strong>Efficient production builds</strong>. In production mode, development-time features are disabled, and your <code>dotnet publish</code> configuration produces minified, efficiently bundled JavaScript files.</li>
-        </ul>
-        <p>The <code>ClientApp</code> subdirectory is a standard React application based on the <code>create-react-app</code> template. If you open a command prompt in that directory, you can run <code>npm</code> commands such as <code>npm test</code> or <code>npm install</code>.</p>
-      </div>
-    );
-  }
+    //agregar un producto nuevo
+    addProduct = product => {
+        this.setState(previous => ({
+            products: [...previous.products, product]
+        }))
+    }
+
+    //modificar creando una copia del arreglo en la propiedad
+    updateProduct = product => {
+        const newProducts = this.state.products.slice();
+        const index = newProducts.findIndex(p => p.id === product.id);
+        newProducts[index] = product;
+        this.setState({
+            products: newProducts
+        })
+    }
+
+    // Filter devuelve los datos bajo la condicción definida
+    // En este caso muestra todos los que tienen un id distinto
+    removeProduct = productId => {
+        const newProducts =
+            this.state.products.filter((product, i) => {
+                return productId !== product.id
+            })
+        //actualizar el estado
+        this.setState({
+            products: newProducts
+        })
+    }
+    render() {
+        return (
+            <div className='container'>
+                <SimpleDataTable
+                    productsData={this.state.products}
+                    removeProduct={this.removeProduct}
+                    updateProduct={this.updateProduct} />
+                <ShowProductForm isNew={true}
+                    addProduct={this.addProduct} />
+            </div>
+        )
+    }
 }
+
+export default Home
+
