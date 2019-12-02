@@ -1,22 +1,42 @@
 ﻿import React, { Component } from 'react'
 import SimpleDataTable from './SimpleDataTable'
 import ShowProductForm from './ShowProductForm'
+import ProductsClient from '../ProductClient'
 
 class Home extends Component {
     // contendra propiedades
     state = {
-        products: [
-            { id: 1, name: 'Azucar', unitPrice: 19.50, unitInStock: 50 },
-            { id: 2, name: 'Leche', unitPrice: 8, unitInStock: 150 },
-            { id: 3, name: 'Frijol', unitPrice: 8, unitInStock: 300 },
-        ]
+        products: []
     }
+
+    //Operaciones CRUD
+    async componentDidMount() {
+        const productsData = await ProductsClient.getProducts();
+        this.setState({ products: productsData});
+    }
+
+    // equivalente
+    //componentDidMount() {
+    //    ProductsClient.getProducts()
+    //        .then(products => 
+    //            this.setState({
+    //                products: productsData
+    //            }))
+    //}
+
+    
 
     //agregar un producto nuevo
     addProduct = product => {
-        this.setState(previous => ({
-            products: [...previous.products, product]
-        }))
+        ProductsClient.addProducts({
+            name: product.name,
+            unitPrice: parseFloat(product.unitPrice),
+            unitInStock: parseInt(product.unitInStock)
+        })
+            //cuando regrese
+            .then(newProduct => this.setState(previous => ({
+                products: [...previous.products, newProduct]
+            })))       
     }
 
     //modificar creando una copia del arreglo en la propiedad

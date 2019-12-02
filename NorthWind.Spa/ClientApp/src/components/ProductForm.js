@@ -48,7 +48,7 @@ class ProductForm extends Component {
                     this.onSubmitUpdate : this.onSubmitNew}>
                         <FormGroup>
                             <Label for='id'>Id: </Label>
-                            <Input type='text' name='id' 
+                            <Input type='text' name='id' readOnly
                                 onChange={this.onChange}
                                 value={this.state.id}/>        
                         </FormGroup>

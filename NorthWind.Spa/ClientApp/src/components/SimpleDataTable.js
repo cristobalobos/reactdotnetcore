@@ -17,7 +17,14 @@ const TableHeader =() => {
 }
 
 const TableBody = (props) => {
-    const tableRows = props.productsData.map((product,index) => {
+    let tableRows = <tr>
+        <td colSpan='6' align='center'>
+            <b><i>No hay productos definidos</i></b>
+        </td>
+    </tr>
+
+    if (props.productsData && props.productsData.lenght > 0) {
+    const tableRows = props.productsData.map((product, index) => {
         return (
             <tr key={product.id}>
                 <th>{product.id}</th>
@@ -41,7 +48,8 @@ const TableBody = (props) => {
             </tr>            
         )
     }
-)
+        )
+    }
     return (
         <tbody>{tableRows}</tbody>        
     )

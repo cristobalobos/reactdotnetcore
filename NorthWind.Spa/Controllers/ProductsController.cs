@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Cors;
 using NorthWind.Dal;
 using NorthWind.Entities;
+using Microsoft.AspNetCore.Authorization;
 
 namespace NorthWind.Spa.Controllers
 {
@@ -14,10 +15,10 @@ namespace NorthWind.Spa.Controllers
     [EnableCors("CORSReactPolicy")]
     [Route("api/[controller]")]
     [ApiController]
+    
     public class ProductsController : ControllerBase
     {
         readonly NorthWind.Dal.ProductsRepository Repository;
-
         public ProductsController(ProductsRepository repository)
         {
             this.Repository = repository;
