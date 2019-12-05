@@ -23,6 +23,7 @@ const TableBody = (props) => {
         </td>
     </tr>
 
+
     if (props.productsData && props.productsData.lenght > 0) {
     tableRows = props.productsData.map((product, index) => {
         return (
