@@ -70,9 +70,9 @@ class ProductForm extends Component {
                                 onChange={this.onChange}
                                 value={this.state.unitInStock}/>        
                         </FormGroup>
-                        <button>
+                        <Button>
                             {this.props.product ? 'Guardar' : 'Crear'}
-                        </button>
+                        </Button>
                     </Form>            
             )
         }    
