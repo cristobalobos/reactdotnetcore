@@ -50,8 +50,8 @@ namespace NorthWind.Spa.Controllers
             return NoContent();
         }
 
-        [HttpDelete]
-        public IActionResult Delete(int id, [FromBody] Product product)
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
         {
             
             Repository.Delete(id);

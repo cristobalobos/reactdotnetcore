@@ -41,25 +41,33 @@ class Home extends Component {
 
     //modificar creando una copia del arreglo en la propiedad
     updateProduct = product => {
-        const newProducts = this.state.products.slice();
-        const index = newProducts.findIndex(p => p.id === product.id);
-        newProducts[index] = product;
-        this.setState({
-            products: newProducts
+        ProductsClient.updateProducts({
+            id: product.id,
+            name: product.name,
+            unitPrice: parseFloat(product.unitPrice),
+            unitInStock: parseInt(product.unitInStock)
         })
+            .then(() => {
+                const newProducts = this.state.products.slice();
+                const index = newProducts.findIndex(p => p.id === product.id);
+                newProducts[index] = product;
+                this.setState({ products: newProducts })
+            });
     }
 
     // Filter devuelve los datos bajo la condicción definida
     // En este caso muestra todos los que tienen un id distinto
     removeProduct = productId => {
-        const newProducts =
-            this.state.products.filter((product, i) => {
-                return productId !== product.id
-            })
-        //actualizar el estado
-        this.setState({
-            products: newProducts
-        })
+        ProductsClient.removeProduct(productId)
+            .then(() => {
+                const newProducts =
+                    this.state.products.filter((product, i) => {
+                        return productId !== product.id
+                    })
+                this.setState({
+                    products: newProducts
+                })
+            })       
     }
     render() {
         return (

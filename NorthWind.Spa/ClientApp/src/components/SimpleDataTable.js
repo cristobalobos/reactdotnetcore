@@ -24,7 +24,7 @@ const TableBody = (props) => {
     </tr>
 
 
-    if (props.productsData && props.productsData.lenght > 0) {
+    if (props.productsData && props.productsData.length  > 0) {
     tableRows = props.productsData.map((product, index) => {
         return (
             <tr key={product.id}>

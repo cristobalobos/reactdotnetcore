@@ -55,12 +55,12 @@ namespace NorthWind.Spa
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            app.UseSpaStaticFiles();
+            app.UseSpaStaticFiles();           
+
+            app.UseRouting();
 
             //uso de la politica creada
             app.UseCors("CORSReactPolicy");
-
-            app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {

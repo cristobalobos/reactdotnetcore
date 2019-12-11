@@ -1,0 +1,11 @@
+C:\Proyectos\react\NorthWind.Spa\NorthWind.Dal\bin\Release\netstandard2.1\NorthWind.Dal.deps.json
+C:\Proyectos\react\NorthWind.Spa\NorthWind.Dal\bin\Release\netstandard2.1\NorthWind.Dal.dll
+C:\Proyectos\react\NorthWind.Spa\NorthWind.Dal\bin\Release\netstandard2.1\NorthWind.Dal.pdb
+C:\Proyectos\react\NorthWind.Spa\NorthWind.Dal\bin\Release\netstandard2.1\NorthWind.Entities.dll
+C:\Proyectos\react\NorthWind.Spa\NorthWind.Dal\bin\Release\netstandard2.1\NorthWind.Entities.pdb
+C:\Proyectos\react\NorthWind.Spa\NorthWind.Dal\obj\Release\netstandard2.1\NorthWind.Dal.csprojAssemblyReference.cache
+C:\Proyectos\react\NorthWind.Spa\NorthWind.Dal\obj\Release\netstandard2.1\NorthWind.Dal.AssemblyInfoInputs.cache
+C:\Proyectos\react\NorthWind.Spa\NorthWind.Dal\obj\Release\netstandard2.1\NorthWind.Dal.AssemblyInfo.cs
+C:\Proyectos\react\NorthWind.Spa\NorthWind.Dal\obj\Release\netstandard2.1\NorthWind.Dal.csproj.CopyComplete
+C:\Proyectos\react\NorthWind.Spa\NorthWind.Dal\obj\Release\netstandard2.1\NorthWind.Dal.dll
+C:\Proyectos\react\NorthWind.Spa\NorthWind.Dal\obj\Release\netstandard2.1\NorthWind.Dal.pdb

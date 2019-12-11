@@ -27,6 +27,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Controllers\ProductClient.rar" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\NorthWind.Dal\NorthWind.Dal.csproj" />
     <ProjectReference Include="..\NorthWind.Entities\NorthWind.Entities.csproj" />
   </ItemGroup>

@@ -1,0 +1,8 @@
+C:\Proyectos\react\NorthWind.Spa\NorthWind.Entities\bin\Release\netstandard2.0\NorthWind.Entities.deps.json
+C:\Proyectos\react\NorthWind.Spa\NorthWind.Entities\bin\Release\netstandard2.0\NorthWind.Entities.dll
+C:\Proyectos\react\NorthWind.Spa\NorthWind.Entities\bin\Release\netstandard2.0\NorthWind.Entities.pdb
+C:\Proyectos\react\NorthWind.Spa\NorthWind.Entities\obj\Release\netstandard2.0\NorthWind.Entities.csprojAssemblyReference.cache
+C:\Proyectos\react\NorthWind.Spa\NorthWind.Entities\obj\Release\netstandard2.0\NorthWind.Entities.AssemblyInfoInputs.cache
+C:\Proyectos\react\NorthWind.Spa\NorthWind.Entities\obj\Release\netstandard2.0\NorthWind.Entities.AssemblyInfo.cs
+C:\Proyectos\react\NorthWind.Spa\NorthWind.Entities\obj\Release\netstandard2.0\NorthWind.Entities.dll
+C:\Proyectos\react\NorthWind.Spa\NorthWind.Entities\obj\Release\netstandard2.0\NorthWind.Entities.pdb
